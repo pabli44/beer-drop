@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ url: result.init_point });
   } catch {
     return NextResponse.json(
-      { error: "Error al crear sesin de pago" },
+      { error: "Error al crear sesión de pago" },
       { status: 500 }
     );
   }
