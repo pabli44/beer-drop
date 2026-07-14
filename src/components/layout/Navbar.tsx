@@ -91,7 +91,7 @@ export function Navbar() {
                       href="/login"
                       className="hover:text-amber-300 transition-colors text-sm"
                     >
-                      Iniciar Sesin
+                      Iniciar Sesión
                     </Link>
                     <Link
                       href="/register"
