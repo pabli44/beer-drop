@@ -1,12 +1,21 @@
 import { Resend } from "resend";
 
-export const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+  const key = process.env.RESEND_API_KEY;
+  if (!key || key.startsWith("re_...")) return null;
+  return new Resend(key);
+}
 
 export async function sendOrderConfirmationEmail(
   to: string,
   orderId: string,
   totalAmount: string
 ) {
+  const resend = getResend();
+  if (!resend) {
+    console.warn("Resend not configured, skipping order confirmation email");
+    return;
+  }
   await resend.emails.send({
     from: "Beer Drop <onboarding@resend.dev>",
     to,
@@ -30,6 +39,11 @@ export async function sendOrderReadyEmail(
   to: string,
   orderId: string
 ) {
+  const resend = getResend();
+  if (!resend) {
+    console.warn("Resend not configured, skipping order ready email");
+    return;
+  }
   await resend.emails.send({
     from: "Beer Drop <onboarding@resend.dev>",
     to,
@@ -49,6 +63,11 @@ export async function sendStockErrorEmail(
   to: string,
   orderId: string
 ) {
+  const resend = getResend();
+  if (!resend) {
+    console.warn("Resend not configured, skipping stock error email");
+    return;
+  }
   await resend.emails.send({
     from: "Beer Drop <onboarding@resend.dev>",
     to,
