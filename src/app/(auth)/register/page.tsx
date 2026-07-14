@@ -21,7 +21,7 @@ export default function RegisterPage() {
               href="/login"
               className="text-amber-700 hover:text-amber-600 font-medium"
             >
-              Inicia sesin
+              Inicia sesión
             </Link>
           </div>
         </div>

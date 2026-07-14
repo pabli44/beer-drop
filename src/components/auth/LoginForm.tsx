@@ -86,7 +86,7 @@ export function LoginForm({ onSuccess }: LoginFormProps) {
         disabled={loading}
         className="w-full bg-amber-700 hover:bg-amber-600 disabled:bg-gray-400 text-white py-2 rounded-md transition-colors font-medium"
       >
-        {loading ? "Ingresando..." : "Iniciar Sesin"}
+        {loading ? "Ingresando..." : "Iniciar Sesión"}
       </button>
     </form>
   );
