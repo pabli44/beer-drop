@@ -1,14 +1,14 @@
 import { z } from "zod/v4";
 
 export const loginSchema = z.object({
-  email: z.email("Email invlido"),
-  password: z.string().min(6, "La contrasea debe tener al menos 6 caracteres"),
+  email: z.email("Email inválido"),
+  password: z.string().min(6, "La contraseña debe tener al menos 6 caracteres"),
 });
 
 export const registerSchema = z.object({
   name: z.string().min(2, "El nombre debe tener al menos 2 caracteres"),
-  email: z.email("Email invlido"),
-  password: z.string().min(6, "La contrasea debe tener al menos 6 caracteres"),
+  email: z.email("Email inválido"),
+  password: z.string().min(6, "La contraseña debe tener al menos 6 caracteres"),
   phone: z.string().optional(),
   address: z.string().optional(),
 });
@@ -28,7 +28,7 @@ export const createBeerSchema = z.object({
   description: z.string().optional(),
   pricePerLiter: z.number().positive("El precio debe ser mayor a 0"),
   stockInLiters: z.number().min(0, "El stock no puede ser negativo"),
-  imageUrl: z.string().url("URL invlida").optional(),
+  imageUrl: z.string().url("URL inválida").optional(),
   isActive: z.boolean().optional(),
 });
 
