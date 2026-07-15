@@ -9,7 +9,7 @@ export default function HomePage() {
             Beer Drop
           </h1>
           <p className="text-xl sm:text-2xl text-amber-200 mb-8 max-w-2xl mx-auto">
-            Cerveza artesanal de calidad, pedida por litros. Recibila fresca
+            Cerveza artesanal de calidad, pedida por litros. Recíbela fresca
             directamente en tu zona.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
